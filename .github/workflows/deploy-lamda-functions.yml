@@ -30,7 +30,7 @@ jobs:
           curl -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sigstore" | jq -r '.value' > $AWS_WEB_IDENTITY_TOKEN_FILE
       - name: zip source code
         run: |
-          pip3 install -r requirements.txt -t ./src/
+          # pip3 install -r requirements.txt -t ./src/
           cd src;zip -r ../package.zip .
       - name: deploy lambda function
         run: |
